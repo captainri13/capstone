@@ -80,7 +80,7 @@
                         <div class="navbar-nav mr-auto py-0">
                             <a href="index.html" class="nav-item nav-link">Home</a>
                             <a href="how to.html" class="nav-item nav-link">How To</a>
-                            <a href="vote.html" class="nav-item nav-link">Vote</a>
+                            <a href="vote.html" class="nav-item nav-link active">Vote</a>
                             <a href="results.html" class="nav-item nav-link">Results</a>
                         </div>
                         
@@ -91,102 +91,45 @@
     </div>
     <!-- Navbar End -->
 
-
     <!-- Breadcrumb Start -->
     <div class="container-fluid">
         <div class="row px-xl-5">
             <div class="col-12">
                 <nav class="breadcrumb bg-light mb-30">
                     <a class="breadcrumb-item text-dark" href="index.html">Home</a>
-                    <span class="breadcrumb-item active">About</span>
+                    <span class="breadcrumb-item active">Vote</span>
                 </nav>
             </div>
         </div>
     </div>
     <!-- Breadcrumb End -->
 
+
     <!-- Featured Start -->
-	<div class="row px-xl-5">
+	<!--<div class="container-fluid pt-5">
+		<div class="row px-xl-5 pb-3"> -->
+		<div class="container-fluid px-5">
             <div class="col">
                 <div class="bg-light p-30">
-                    <div class="nav nav-tabs mb-4">
-                        <a class="nav-item nav-link text-dark active" data-toggle="tab" href="#tab-pane-1">Description</a>
-                        <a class="nav-item nav-link text-dark" data-toggle="tab" href="#tab-pane-2">Blockchain</a>
-                        <a class="nav-item nav-link text-dark" data-toggle="tab" href="#tab-pane-3">Benefits</a>
+	            <div class="mb-5">
+                    <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Candidates</span></h5>
+                    <div class="bg-light p-30">
+                    <!-- Radio button list of candidates  -->
+                    <!--<form action="/action_page.php"> -->
+                    <form action="#">
+  			<input type="radio" name="vote" onclick="myFunction(this.value)" value="David"> Candidate 1 - David<br>
+  			<input type="radio" name="vote" onclick="myFunction(this.value)" value="Ivan"> Candidate 2 - Ivan<br>
+  			<input type="radio" name="vote" onclick="myFunction(this.value)" value="Dwayne"> Candidate 3 - Dwayne<br>
+  			<input type="radio" name="vote" onclick="myFunction(this.value)" value="Spencer"> Candidate 4 - Spencer<br>
+  			
+  			You are about to vote for: <input type="text" id="candidate">
+  			<a href="#" onclick="App.voteForCandidate()" class="btn btn-primary">Cast vote</a>
+		     </form>
                     </div>
-                    <div class="tab-content">
-                        <div class="tab-pane fade show active" id="tab-pane-1">
-                            <h4 class="mb-3">What is Dream Vote</h4>
-                            <p>Dream Vote is a revolutionary way to vote!</p>
-                            <p>Our goal is to use blockchain technology to transform our current voting system and bring it into the Future.</p>
-							<p>Providing a platform that is more efficeint, convient and far easier to use.</p>
-							<p>We will make it impossible for voter fraud. Securing your vote and ensuring Every Vote Counts!</p>
-                        </div>
-                        <div class="tab-pane fade" id="tab-pane-2">
-                            <h4 class="mb-3">Additional Information</h4>
-                            <p>Blockchain Basics</p>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item px-0">
-                                            1) Distributed ledger Technology
-                                        </li>
-                                        <li class="list-group-item px-0">
-                                            2) Immutable records
-                                        </li>
-                                        <li class="list-group-item px-0">
-                                            3) Smart contracts
-                                        </li>
-                                        <li class="list-group-item px-0">
-                                            
-                                        </li>
-                                      </ul> 
-                                </div>
-                                <div class="col-md-6">
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item px-0">
-                                            4) As a transaction occurs, it is recorded as a block of data
-                                        </li>
-                                        <li class="list-group-item px-0">
-                                            5) Each Block is connected to the ones before and after it
-                                        </li>
-                                        <li class="list-group-item px-0">
-                                            6) Transactions are blocked together in an irreversible chain: 
-											called a blockchain
-                                        </li>
-                                        <li class="list-group-item px-0">
-                                            
-                                        </li>
-                                      </ul> 
-                                </div>
-                            </div>
-                        </div>
-						<div class="tab-pane fade" id="tab-pane-3">
-							<h4 class="mb-3">Blockchain Benefits</h4>
-                            <p>Blockchain will provide:</p>
-                            <div class="row">
-                                <div class="col-md-6">
-									<ul class="list-group list-group-flush">
-                                        <li class="list-group-item px-0">
-                                            1) Greater Trust
-                                        </li>
-                                        <li class="list-group-item px-0">
-                                            2) Better Security
-                                        </li>
-                                        <li class="list-group-item px-0">
-                                            3) More Performance & Efficiencies
-                                        </li>
-                                        <li class="list-group-item px-0">
-                                            
-                                        </li>
-                                      </ul> 
-								</div>
-							</div>	
-						</div>
-					</div>
-				</div>
-			</div>
-	</div>
+		     </div>
+                </div>
+		</div>
+		</div>
     <div class="container-fluid pt-5">
         <div class="row px-xl-5 pb-3">
             <div class="col-lg-4 col-md-6 col-sm-12 pb-1">
@@ -244,6 +187,12 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <!-- Get radio button value and send to vote contract -->
+    <script>
+	function myFunction(result) {
+  		document.getElementById("candidate").value = result;
+	}
+    </script>
 </body>
 <script src="./index.js"></script>
 </html>
